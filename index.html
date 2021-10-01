@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, intial-scale=1.0">
         <title>The Band</title>
+        <link rel="icon" href="./assets/img/icon/icons8-musical-64.png">
         <link rel="stylesheet" href="./assets/css/styles.css">
         <script src="https://kit.fontawesome.com/b063880f17.js" crossorigin="anonymous"></script>
     </head>
@@ -13,20 +14,20 @@
             <div id="header">
                 <!-- begin Nav -->
                 <ul id="nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Band</a></li>
-                    <li><a href="#">Tour</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li>
+                    <li class=""><a href="#">Home</a></li>
+                    <li class=""><a href="#band">Band</a></li>
+                    <li class=""><a href="#tour">Tour</a></li>
+                    <li class=""><a href="#contact">Contact</a></li>
+                    <li class="">
                         <a href="#">
                             More
                             <i class="fa fa-caret-down" aria-hidden="true"></i>
                         </a>
 
                         <ul class="subnav">
-                            <li><a href="#">Merchandise</a></li>
-                            <li><a href="#">Extras</a></li>
-                            <li><a href="#">Media</a></li>                            
+                            <li class=""><a href="#">Merchandise</a></li>
+                            <li class=""><a href="#">Extras</a></li>
+                            <li class=""><a href="#">Media</a></li>                            
                         </ul>
                     </li>                    
                 </ul>
@@ -50,7 +51,7 @@
 
             <div id="container">
                 <div id="content">
-                    <div class="content-section">
+                    <div class="content-section" id="band">
                         <h2 class="section-heading">THE BAND</h2>
 
                         <i class="section-subheading">We love music</i>
@@ -78,7 +79,7 @@
                         </div>
                     </div>
 
-                    <div class="tour-section">
+                    <div class="tour-section" id="tour">
                         <div class="content-section">
                             <h2 class="section-heading text-white">TOUR DATES</h2>
     
@@ -99,7 +100,7 @@
                                         <h3 class="places-heading">New York</h3>
                                         <p class="places-time">Fri 27 Nov 2016</p>
                                         <p class="places-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                        <button class="places-buy-btn">Buy Tickets</button>
+                                        <button class="places-buy-btn js-buy-ticket">Buy Tickets</button>
                                     </div>
                                 </div>
 
@@ -109,7 +110,7 @@
                                         <h3 class="places-heading">Paris</h3>
                                         <p class="places-time">Sat 28 Nov 2016</p>
                                         <p class="places-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                        <button class="places-buy-btn">Buy Tickets</button>
+                                        <button class="places-buy-btn js-buy-ticket">Buy Tickets</button>
                                     </div>
                                 </div>
 
@@ -119,7 +120,7 @@
                                         <h3 class="places-heading">Sun 29 Nov 2016</h3>
                                         <p class="places-time">Fri 27 Nov 2016</p>
                                         <p class="places-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                        <button class="places-buy-btn">Buy Tickets</button>
+                                        <button class=" places-buy-btn js-buy-ticket">Buy Tickets</button>
                                     </div>
                                 </div>
 
@@ -128,45 +129,122 @@
                         </div>
                     </div>
 
-                    <div class="content-section">
+                    <div class="content-section-contact" id="contact">
                         <h2 class="section-heading">CONTACT</h2>
 
                         <i class="section-subheading">Fan? Drop a note!</i>
+
+                        <div class="row">
+                            <div class="col col-half">
+                                <p><i class="fa fa-map-marker" aria-hidden="true" style="width: 30px;"></i>Chicago, US</p>
+                                <p><i class="fa fa-phone" aria-hidden="true" style="width: 30px;"></i>Phone: +00 151515</p>
+                                <p><i class="fa fa-envelope" aria-hidden="true" style="width: 30px;"></i>Email: mail@mail.com</p>
+                            </div>
+                            <div class="col col-half">
+                                <form action="">
+                                    <div class="row" style="padding: 0 8px; margin: 0 -16px 8px -16px;">
+                                        <div class="col col-half" style="padding: 0 8px;">
+                                            <input type="text" name="" id="" class="form-control" placeholder="Name">
+                                        </div>
+                                        <div class="col col-half" style="padding: 0 8px;">
+                                            <input type="email" name="" id="" class="form-control" placeholder="Email">
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="col col-full">
+                                        <input type="text" name="" id="" class="form-control" placeholder="Message">
+                                    </div>                                    
+                                </form>
+
+                                <button type="submit" class="send-btn">SEND</button>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
                     </div>
                 </div>
+
+                <img src="./assets/img/map/map.jpg" alt="Map" class="map" style="width:100% ;">
             </div>
 
             <div id="footer">
-
+                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-snapchat" aria-hidden="true"></i>
+                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                <p>Powered by <a href="w3.css">w3.css</a></p>
             </div>
         </div>
 
-        <div id="ticket-modal">
+        <div class="js-ticket-modal" id="ticket-modal">
             <div class="modal-container">
-                <div class="modal-header">
-                    <div class="modal-close">
-                        <span class="close-btn">×</span>
+                <header class="modal-header">
+                    <div class="modal-close-1 js-close-btn">
+                        <span class="close-btn-1">×</span>
                     </div>
 
                     <header class="modal-ticket-header">
-                        <i class="fa fa-suitcase" aria-hidden="true"></i>
+                        <i class="fa fa-suitcase" aria-hidden="true" style="margin-right: 4px;"></i>
                         Tickets
                     </header>
-                </div>
-                        
+                </header>
+                                 
                 <div class="modal-body">
-                    <label for="" class="cart-label">
+                    <label for="quantity" class="cart-label">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         Tickets, $15 per person
                     </label>
 
-                    <input type="text" class="how-many" placeholder="How many?">
+                    <input id="quantity" type="text" class="how-many" placeholder="How many?">
 
-                    <label for="" class="send-to-label">
-                        
+                    <label for="email" class="send-to-label">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        Send To
                     </label>
+
+                    <input id="email" type="text" class="enter-email" placeholder="Enter email">
+
+                    <button id="pay">
+                        PAY <i class="fa fa-check" aria-hidden="true"></i>                    
+                    </button>                    
                 </div>
-            </div>
+
+                <footer class="modal-footer">
+                    <button id="close-btn-2" class="js-close-btn">
+                        Close <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+
+                    <p class="modal-help">Need <a href="#" class="modal-help-link" style="color: #2196F3;">help?</a></p>
+                </footer>
+            </div>            
         </div>
+        
+        <script>
+            const buyBtns = document.querySelectorAll('.js-buy-ticket')
+            const ticketModal = document.querySelector('.js-ticket-modal')
+            const closeBtns = document.querySelectorAll('.js-close-btn')
+            const modalContainer = document.querySelector('.modal-container')
+
+            for (const buyBtn of buyBtns) {
+                buyBtn.addEventListener('click', function() {
+                    ticketModal.classList.add('open')
+                })
+            }
+
+            for (const closeBtn of closeBtns) {
+                closeBtn.addEventListener('click', function() {
+                    ticketModal.classList.remove('open')
+                })
+            }
+
+            ticketModal.addEventListener('click', function() {
+                ticketModal.classList.remove('open')
+            })
+
+            modalContainer.addEventListener('click', function(event) {
+                event.stopPropagation()
+            })
+        </script>
     </body>
 </html>

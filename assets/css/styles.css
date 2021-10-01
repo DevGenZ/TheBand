@@ -10,10 +10,23 @@ html {
     font-size: 15px;
     line-height: 22.5px;
     text-align: justify;
+    scroll-behavior: smooth;
 }
 
-#main {
+.col {
+    float: left;
+}
 
+.col-half {
+    width: 50%;
+}
+
+.col-full {
+    width: 100%;
+}
+
+.col-third {
+    width: calc(100%/3);
 }
 
 .clear {
@@ -134,15 +147,8 @@ html {
     line-height: 1.5px;
 }
 
-#container {
-
-}
-
-#content {
-    
-}
-
-#content .content-section {
+#content .content-section,
+#content .content-section-contact {
     padding: 64px 16px;
     max-width: 800px;
     margin-left: auto;
@@ -227,6 +233,12 @@ html {
     padding: 0 8px;
 }
 
+#content .content-section::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
 /* Places */
 .places-list {    
     padding: 32px 8px;
@@ -277,11 +289,38 @@ html {
     border-style: none;
     font-family: 'Lato', sans-serif;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .places-buy-btn:hover {
     color: black;
-    background-color: #ccc;
+    background-color: #ccc;    
+}
+
+.content-section .form-control {
+    padding: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.send-btn {
+    color: white;
+    background-color: black;
+    border: none;
+    float: right;
+    padding: 8px 16px;
+    margin: 16px 0;
+    font: inherit;
+    font-style: inherit;
+    font-variant-ligatures: inherit;
+    font-variant-caps: inherit;
+    font-variant-numeric: inherit;
+    font-variant-east-asian: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
 }
 
 #ticket-modal {
@@ -292,8 +331,13 @@ html {
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.4);
-    display: flex;
+    display: none;
+    align-items: flex-start;
     justify-content: center;
+}
+
+#ticket-modal.open {
+    display: flex;
 }
 
 #ticket-modal .modal-container {
@@ -302,6 +346,7 @@ html {
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
     line-height: 1.5;
+    animation: animateTop 0.4s;
 }
 
 #ticket-modal .modal-header {
@@ -310,7 +355,7 @@ html {
     padding: 32px 16px;
 }
 
-#ticket-modal .modal-close {
+#ticket-modal .modal-close-1 {
     position: absolute;
     top: 0;
     right: 0;
@@ -330,6 +375,123 @@ html {
     text-align: center;
 }
 
-#footer {
+#ticket-modal .modal-body,
+#ticket-modal .modal-footer {
+    padding: 0.15px 16px;
+}
 
+#ticket-modal .modal-body .cart-label,
+#ticket-modal .modal-body .send-to-label {
+    margin: 15px 0;
+    display: block;
+}
+
+#ticket-modal .modal-body .how-many,
+#ticket-modal .modal-body .enter-email {
+    padding: 8px;
+    display: block;
+    border: 1px solid #ccc;
+    width: 100%;
+    font: inherit;
+}
+
+#ticket-modal .modal-body #pay {
+    width: 100%;
+    margin: 16px 0;
+    padding: 16px;
+    background-color: #009688;
+    color: white;
+    font: inherit;
+    border: none;
+}
+
+#ticket-modal .modal-footer #close-btn-2,
+#ticket-modal .modal-footer .modal-help {
+    display: inline-block;
+}
+
+#ticket-modal .modal-footer .modal-help {
+    float: right;
+}
+
+#ticket-modal .modal-header .modal-close-1:hover,
+#ticket-modal .modal-body #pay:hover,
+#ticket-modal .modal-footer #close-btn-2:hover {
+    color: black;
+    background-color: #ccc;
+}
+
+#ticket-modal .modal-footer #close-btn-2 {
+    color: white;
+    background-color: rgb(244, 67, 54);
+    border: none;
+    padding: 8px 16px;
+    margin: 16px 0;
+    cursor: pointer;
+    font: inherit;
+}
+
+#ticket-modal .modal-footer .modal-help {
+    margin: 15px 0;
+}
+
+.map {
+    filter: grayscale(50%);
+}
+
+.content-section .row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.content-section .row {
+    padding: 32px 0;
+}
+
+#footer {
+    padding: 64px 16px;
+    text-align: center;
+    margin-top: 0;
+    font-size: 24px;
+    opacity: 0.6;
+    line-height: 36px;
+}
+
+.send-btn:hover {
+    color: black;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+#footer i {
+    color: black;
+    background-color: #f1f1f1;
+}
+
+#footer i:hover {
+    color: black;
+    opacity: 0.6;
+}
+
+#footer p {
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+#footer p a {
+    color: black;
+}
+
+
+
+@keyframes animateTop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
 }
